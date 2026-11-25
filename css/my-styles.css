@@ -1,0 +1,68 @@
+:root {
+  --paper: #f7f5f0;
+  --ink: #202124;
+  --accent: #4338ca;
+  --stone: #dcd6cc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font: 400 16px/1.6 Inter, Arial, sans-serif; }
+h1, h2, h3, h4 { font-family: "Space Grotesk", Arial, sans-serif; font-weight: 600; line-height: 1.15; margin: 0; }
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.wrap { width: min(1080px, 90%); margin-inline: auto; }
+.site-head { border-bottom: 1px solid var(--stone); }
+.top, nav, .foot, .about-strip { display: flex; align-items: center; }
+.top, .foot, .about-strip { justify-content: space-between; gap: 20px; }
+.top { min-height: 78px; }
+.top h1 { font-size: 24px; letter-spacing: -.06em; }
+.top h1 a { color: var(--ink); text-decoration: none; }
+nav { gap: clamp(12px, 3vw, 32px); }
+nav a { font-weight: 600; text-decoration: none; }
+nav a:hover, .page-work .nav-work, .page-about .nav-about, .page-resume .nav-resume, .page-contact .nav-contact { text-decoration: underline; }
+.intro { padding: 49px 0 33px; }
+.intro h2 { font-size: clamp(38px, 6vw, 48px); line-height: 1.1; letter-spacing: -.055em; }
+.intro p { max-width: 620px; margin: 14px 0 0; }
+.gallery, .bio-grid, .resume-grid { display: flex; flex-wrap: wrap; gap: 0; margin: 0 -8px; padding: 0; }
+.gallery .project, .bio-grid > * { width: 50%; padding: 0 8px; }
+.project { padding-bottom: 36px !important; }
+.project img, .bio-grid img, .resume-side img { width: 100%; height: auto; display: block; }
+.project > a { display: block; background: #ede9e1; border: 1px solid var(--stone); }
+.category { color: var(--accent); font-size: 13px; font-weight: 600; margin: 15px 0 3px; }
+.project h3 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -.045em; }
+.project h3 a { color: var(--ink); text-decoration-color: var(--stone); }
+.project h3 a:hover { text-decoration-color: var(--accent); }
+.caption { margin-top: 9px; max-width: 48ch; }
+.about-strip { border-top: 1px solid var(--stone); max-width: none; margin: 6px 0 0; padding: 32px 0; }
+.about-strip h2, .reading h3, .resume-grid h3 { font-size: 32px; letter-spacing: -.04em; }
+.about-strip p { max-width: 62ch; margin: 9px 0 0; }
+.action { display: inline-block; flex-shrink: 0; border: 0; color: var(--paper); background: var(--accent); padding: 11px 20px; border-radius: 10px; font: 600 16px/1.5 Inter, Arial, sans-serif; cursor: pointer; text-decoration: none; }
+.action:hover { text-decoration: underline; }
+.foot { border-top: 1px solid var(--stone); padding: 24px 0; margin-top: 28px; font-size: 14px; }
+figure { margin: 0; }
+figcaption { margin: 10px 0 0; font-size: 14px; }
+.bio-grid .reading { padding: 0 8px 0 32px; }
+.reading p, .resume-grid p { margin: 10px 0 20px; }
+.resume-side { width: 33.333%; }
+.resume-main { width: 66.667%; }
+.resume-side, .resume-grid .resume-main { padding: 0 8px; }
+.resume-grid .resume-main { padding-left: 32px; }
+.resume-side img { margin-bottom: 24px; }
+.resume-grid h4 { margin-top: 18px; font-size: 21px; }
+.resume-grid section + section { border-top: 1px solid var(--stone); margin-top: 26px; padding-top: 22px; }
+.resume-side ul { padding-left: 21px; }
+.contact-form { max-width: 620px; }
+.contact-form label { display: block; margin: 16px 0 5px; font-weight: 600; }
+.contact-form .w3-input { width: 100%; padding: 10px 13px; display: block; font: inherit; color: var(--ink); background: white; border: 1px solid #9a968c; border-radius: 5px; }
+.contact-form button { margin: 20px 0; }
+.skip { position: absolute; left: -10000px; background: white; padding: 8px; }
+.skip:focus { left: 8px; top: 8px; z-index: 1; }
+@media (max-width: 600px) {
+  .top { align-items: flex-start; flex-direction: column; gap: 10px; padding: 15px 0; }
+  .top nav { flex-wrap: wrap; }
+  .intro { padding: 30px 0 25px; }
+  .gallery .project, .bio-grid > *, .resume-side, .resume-main { width: 100%; }
+  .bio-grid .reading, .resume-grid .resume-main { padding: 22px 8px 0; }
+  .about-strip { align-items: flex-start; flex-direction: column; }
+}
